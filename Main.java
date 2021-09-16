@@ -7,6 +7,7 @@ public class Main
         System.out.println(isPerfectNumber(28));
         System.out.println(isPerfectNumber(5));
         System.out.println(isPerfectNumber(-1));
+        System.out.println(isPerfectNumber(1));
     }
 
     public static boolean isPerfectNumber(int x)
@@ -16,16 +17,13 @@ public class Main
         {
             return false;
         }
+        for(int i = 1; i<x; i++)
         {
-            for(int i = 1; i<x; i++)
+            if (x % i == 0)
             {
-                if (x % i == 0)
-                {
-                    comparison += i;
-                    System.out.println(i);
-                }
+                comparison += i;
             }
-            return (comparison == x);
         }
+        return (comparison == x);
     }
 }
